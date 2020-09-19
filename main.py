@@ -1,3 +1,4 @@
+# takes in the answer from the user
 def question(value):
     answer = input(value)
     return answer.lower()
@@ -15,13 +16,14 @@ def user_data(value, var):
     return answer
 
 
-# welcome the user when the program starts
+# welcomes the user to the program
 print("Hello Welcome to the User Register/Login System")
+# calls the question function
 quest_start = question("Would you like to Login or Register? ")
-
+# runs a while loop to check to make sure they answered with register or login
 while quest_start != "register" and quest_start != "login":
     quest_start = question("You have to make a choice to either Register or Login ")
-
+# if the user chose to register then they go to that stage of the app
 if quest_start == "register":
     print("Great! Let's get you signed up!")
     username = user_data("Choose a username: ", "Username")
@@ -32,6 +34,6 @@ if quest_start == "register":
 
     while password == "":
         password = input("You need to choose a password")
-
+# if the user chose to login then they go to that stage of the app
 elif quest_start == "login":
     print("great let's login ")
